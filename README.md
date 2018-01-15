@@ -1,2 +1,2 @@
 # planner-cli
-A command line project based tasks planner.
+A command line projects based tasks planner.
