@@ -1,4 +1,11 @@
-const { org, project, task, complete, incomplete } = require( "./options" );
+const {
+  org,
+  project,
+  task,
+  deadline,
+  complete,
+  incomplete
+} = require( "./options" );
 
 const add = {
   "command": "add",
@@ -8,6 +15,7 @@ const add = {
     org,
     project,
     task,
+    deadline,
     complete,
     incomplete
   }

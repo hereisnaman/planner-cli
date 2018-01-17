@@ -3,14 +3,14 @@ const org = {
   "type": "string",
   "alias": [ "o" ],
   "describe": "Set organisation name.",
-  "default": config.default_org
+  "default": config.defaults.org
 };
 
 const project = {
   "type": "string",
   "alias": [ "p" ],
   "describe": "Set project name.",
-  "default": config.default_project,
+  "default": config.defaults.project,
   "implies": "org"
 };
 
@@ -19,6 +19,13 @@ const task = {
   "alias": [ "t" ],
   "describe": "Set task name.",
   "implies": "project"
+};
+
+const deadline = {
+  "type": "array",
+  "alias": [ "d" ],
+  "describe": "Set task deadline dd mm yyyy.",
+  "implies": "task"
 };
 
 const complete = {
@@ -39,6 +46,7 @@ module.exports = {
   org,
   project,
   task,
+  deadline,
   complete,
   incomplete
 };
