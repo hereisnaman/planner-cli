@@ -1,24 +1,26 @@
-const config = require( "../../config.json" );
 const org = {
   "type": "string",
   "alias": [ "o" ],
-  "describe": "Set organisation name.",
-  "default": config.defaults.org
+  "describe": "Set organisation name."
 };
 
 const project = {
   "type": "string",
   "alias": [ "p" ],
   "describe": "Set project name.",
-  "default": config.defaults.project,
   "implies": "org"
 };
 
 const task = {
   "type": "string",
   "alias": [ "t" ],
-  "describe": "Set task name.",
-  "implies": "project"
+  "describe": "Set task name."
+};
+
+const name = {
+  "type": "string",
+  "alias": [ "n" ],
+  "describe": "Set name."
 };
 
 const deadline = {
@@ -42,11 +44,24 @@ const incomplete = {
   "implies": "task"
 };
 
+const defaultOrg = {
+  "type": "string",
+  "describe": "Set default organisation."
+};
+
+const defaultProject = {
+  "type": "string",
+  "describe": "Set default project."
+};
+
 module.exports = {
   org,
   project,
   task,
+  name,
   deadline,
   complete,
-  incomplete
+  incomplete,
+  defaultOrg,
+  defaultProject
 };
