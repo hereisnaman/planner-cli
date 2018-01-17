@@ -4,7 +4,8 @@
   "description": "A command line projects based tasks planner",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,15 @@
   "bugs": {
     "url": "https://github.com/hereisnaman/planner-cli/issues"
   },
-  "homepage": "https://github.com/hereisnaman/planner-cli#readme"
+  "homepage": "https://github.com/hereisnaman/planner-cli#readme",
+  "dependencies": {
+    "ember-cli": "^2.18.0",
+    "lodash": "^4.17.4",
+    "moment": "^2.20.1",
+    "webpack-dev-server": "^2.11.0",
+    "yargs": "^8.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.15.0"
+  }
 }
