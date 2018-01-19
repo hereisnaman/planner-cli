@@ -6,8 +6,7 @@ const {
   deadline,
   complete,
   incomplete,
-  defaultOrg,
-  defaultProject
+  defaultOrg
 } = require( "./options" );
 
 const add = {
@@ -29,35 +28,14 @@ const update = {
   "alias": [ "u" ],
   "describe": "Update task details.",
   "builder": {
-    "org": Object.assign( {
-      "implies": "task"
-    }, org ),
-    "project": Object.assign( {
-      "implies": "task"
-    }, project ),
+    org,
+    project,
     task,
+    name,
     deadline,
     complete,
     incomplete,
-    defaultOrg,
-    defaultProject
-  }
-};
-
-const change = {
-  "command": "change",
-  "alias": [ "c" ],
-  "describe": "Change Organisation or Project details.",
-  "builder": {
-    "org": Object.assign( {
-      "implies": "name"
-    }, org ),
-    "project": Object.assign( {
-      "implies": "name"
-    }, project ),
-    name,
-    defaultOrg,
-    defaultProject
+    "default-org": defaultOrg
   }
 };
 
@@ -75,6 +53,5 @@ const remove = {
 module.exports = {
   add,
   update,
-  change,
   remove
 };

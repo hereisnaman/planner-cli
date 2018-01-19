@@ -7,8 +7,7 @@ const org = {
 const project = {
   "type": "string",
   "alias": [ "p" ],
-  "describe": "Set project name.",
-  "implies": "org"
+  "describe": "Set project name."
 };
 
 const task = {
@@ -49,11 +48,6 @@ const defaultOrg = {
   "describe": "Set default organisation."
 };
 
-const defaultProject = {
-  "type": "string",
-  "describe": "Set default project."
-};
-
 module.exports = {
   org,
   project,
@@ -62,6 +56,5 @@ module.exports = {
   deadline,
   complete,
   incomplete,
-  defaultOrg,
-  defaultProject
+  defaultOrg
 };

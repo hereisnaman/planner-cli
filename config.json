@@ -1,6 +1,3 @@
 {
-  "defaults": {
-    "org": "personal",
-    "project": "work"
-  }
+  "data_base": "data/"
 }

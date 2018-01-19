@@ -1,7 +1,6 @@
 const args = require( "./cli/args.js" );
 const add = require( "./containers/add" );
 const update = require( "./containers/update" );
-const change = require( "./containers/change" );
 const remove = require( "./containers/remove" );
 
 switch ( args._[ 0 ] ) {
@@ -10,9 +9,6 @@ switch ( args._[ 0 ] ) {
     break;
   case "update":
     update( args );
-    break;
-  case "change":
-    change( args );
     break;
   case "remove":
     remove( args );
