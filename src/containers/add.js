@@ -17,7 +17,7 @@ const addTask = ( args, org, project ) => {
     status = args.complete ? "complete" : "incomplete";
 
     task = {
-      "id": id,
+      id,
       "name": args.task,
       "deadline": deadline,
       "status": status
@@ -45,11 +45,11 @@ const addProject = ( args, org ) => {
     let id = ( _.last( projects ) && _.last( projects ).id + 1 ) || 0;
 
     project = {
-      "id": id,
+      id,
       "name": args.project
     };
     projects.push( project );
-    let success = makeDir( [ org.name, args.project ] ) && writeData( [ org.name, args.project, "tasks.json" ], [] ) && writeData( [ org.name, "projects.json" ], projects );
+    let success = makeDir( [ org.name, project.name ] ) && writeData( [ org.name, project.name, "tasks.json" ], [] ) && writeData( [ org.name, "projects.json" ], projects );
 
     if ( success ) {
       console.log( `Created a new project: ${args.project}` );
@@ -76,15 +76,15 @@ const addOrg = ( args ) => {
     let id = ( _.last( organisations ) && _.last( organisations ).id + 1 ) || 0;
 
     org = {
-      "id": id,
+      id,
       "name": args.org
     };
     organisations.push( org );
 
-    let success = makeDir( [ args.org ] ) && writeData( [ args.org, "projects.json" ], [] ) && writeData( [ org.name, "tasks.json" ], [] ) && writeData( [ "organisations.json" ], organisations );
+    let success = makeDir( [ org.name ] ) && writeData( [ org.name, "projects.json" ], [] ) && writeData( [ org.name, "tasks.json" ], [] ) && writeData( [ "organisations.json" ], organisations );
 
     if ( success ) {
-      console.log( `Created a new organisation: ${args.org}` );
+      console.log( `Created a new organisation: ${org.name}` );
     }
   } else {
     org = organisations[ orgIndex ];
