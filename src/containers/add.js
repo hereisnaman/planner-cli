@@ -77,7 +77,8 @@ const addOrg = ( args ) => {
 
     org = {
       id,
-      "name": args.org
+      "name": args.org,
+      "default": false
     };
     organisations.push( org );
 
@@ -101,8 +102,14 @@ const addOrg = ( args ) => {
 };
 
 module.exports = ( args ) => {
+  let defaults = readData( [ "defaults.json" ], {} );
+
   if ( args.org ) {
     addOrg( args );
+  } else if ( defaults.org ) {
+    let newArgs = Object.assign( args, { "org": defaults.org.name } );
+
+    addOrg( newArgs );
   } else {
     console.error( "error: Missing organisation name." );
     console.info( "Add a new organisation using\n\n    add -org <name>\n" );
