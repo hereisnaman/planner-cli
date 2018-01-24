@@ -112,7 +112,7 @@ module.exports = ( args ) => {
     addOrg( newArgs );
   } else {
     console.error( "error: Missing organisation name." );
-    console.info( "Add a new organisation using\n\n    add -org <name>\n" );
+    console.info( "Add a new organisation using\n\n    add --org <name>\n" );
     console.info( "or set default organisation name\n\n    update --default-org <name>\n" );
   }
 };
