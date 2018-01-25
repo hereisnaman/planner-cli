@@ -12,7 +12,6 @@ const setOrgName = ( args ) => {
 
   if ( orgExists ) {
     console.error( `error: ${args.name} organisation already exist.` );
-    console.info( "Add a new organisation using\n\n    add --org <name>\n" );
   } else if ( orgIndex < 0 ) {
     console.error( `error: ${args.org} organisation does not exist.` );
     console.info( "Add a new organisation using\n\n    add --org <name>\n" );
@@ -72,8 +71,10 @@ const setDefaultOrg = ( args ) => {
 module.exports = ( args ) => {
 
   if ( args.org ) {
-    if ( args.project || args.task ) {
+    if ( args.project ) {
 
+    } else if ( args.task ) {
+      
     } else if ( !args.name ) {
       console.error( "error: Missing organisation new name." );
       console.info( "Update organisation name using\n\n    update --org <name> --name <new name>\n" );
