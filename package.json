@@ -18,11 +18,11 @@
   },
   "homepage": "https://github.com/hereisnaman/planner-cli#readme",
   "dependencies": {
-    "ember-cli": "^2.18.0",
+    "ember-cli": "^3.1.4",
     "lodash": "^4.17.4",
     "moment": "^2.20.1",
-    "webpack-dev-server": "^2.11.0",
-    "yargs": "^8.0.2"
+    "webpack-dev-server": "^3.1.4",
+    "yargs": "^11.0.0"
   },
   "devDependencies": {
     "eslint": "^4.15.0"
